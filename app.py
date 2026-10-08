@@ -178,8 +178,9 @@ def merge_two_dicts(d1: dict, d2: dict) -> dict:
     Expected: Merged dict returned, d1 remains unchanged.
     """
     # BUG: Mutates d1 directly
-    d1.update(d2)
-    return d1
+    d3 = d1.copy()
+    d3.update(d2)
+    return d3
 
 
 def filter_positive_numbers(numbers: list) -> list:
